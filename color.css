@@ -41,11 +41,12 @@ header ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 150px;
 }
 
 header ul li {
   list-style: none;
-  margin-left: 40px;
+  margin-left: 80px;
 }
 
 header ul li a {

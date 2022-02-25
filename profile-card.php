@@ -13,7 +13,6 @@
 
 ?>
 
-
 <html>
     <head>
         <title>Profile Card</title>

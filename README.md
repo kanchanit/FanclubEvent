@@ -1,2 +1,2 @@
 # PHP-CRUD-OOP-
-PHP CRUD OOP 
+PHP FanclubEvent OOP

@@ -62,5 +62,8 @@
 
     }
     
+    class Member extends DB_con{
+        
+    }
 
 ?>

@@ -1,17 +1,19 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  height: 100vh;
+  background: #67b26f; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #4ca2cd,
+    #67b26f
+  ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     180deg,
     rgba(109, 18, 157, 0.72) 0%,
     rgba(255, 151, 135, 0.83) 100%
   );
-  padding-left: 5%;
-  padding-right: 5%;
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  color: #000;
 }
 
 .navbar {
@@ -23,7 +25,6 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-
 .logo {
   color: #fff;
   font-weight: 700;
@@ -65,41 +66,32 @@ nav ul li a {
   color: #fff;
 }
 
-.profile-card {
-  width: 600px;
-  text-align: center;
-  border-radius: 8px;
-  overflow: hidden;
+.student-profile .card {
+  border-radius: 10px;
 }
 
-.card-header {
-  border-radius: 8px;
-  background: #f4f4f4;
-  padding: 60px 40px;
-}
-
-.pic {
-  display: inline-block;
-  padding: 8px;
-  background: linear-gradient(130deg, #74b9ff, #e66767);
+.student-profile .card .card-header .profile_img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 10px auto;
+  border: 10px solid #ccc;
   border-radius: 50%;
 }
 
-.pic img {
-  display: block;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+.student-profile .card h3 {
+  font-size: 20px;
+  font-weight: 700;
 }
 
-.username {
-  color: #e66767;
-  font-size: 28px;
-  font-weight: 600;
-  margin: 10px 0;
+.student-profile .card p {
+  font-size: 16px;
+  color: #000;
 }
 
-.name {
-  font-size: 18px;
-  color: #203239;
+.student-profile .table th,
+.student-profile .table td {
+  font-size: 14px;
+  padding: 5px 10px;
+  color: #000;
 }

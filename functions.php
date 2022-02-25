@@ -16,32 +16,8 @@
             }
         }
 
-        public function insert($firstname, $lastname, $email) {
-            $result = mysqli_query($this->dbcon, "INSERT INTO member(Fname, Lname, email) VALUES('$Fname', '$Lname', '$email')");
-            return $result;
-        }
-
         public function fetchdata() {
             $result = mysqli_query($this->dbcon, "SELECT * FROM member");
-            return $result;
-        }
-
-        public function fetchonerecord($NationalID) {
-            $result = mysqli_query($this->dbcon, "SELECT * FROM member WHERE NationalID = '$NationalID'");
-            return $result;
-        }
-        public function selectLeader($NationalID){
-            $result = mysqli_query($this->dbcon, "SELECT * FROM leader WHERE L_NationalID = '$NationalID'");
-            return $result;
-        }
-
-        public function selectLocation($postNo){
-            $result = mysqli_query($this->dbcon, "SELECT * FROM leader_location WHERE PostNo = '$postNo'");
-            return $result;
-        }
-
-        public function selectBank($bankID){
-            $result = mysqli_query($this->dbcon, "SELECT * FROM bank WHERE BankID = '$bankID'");
             return $result;
         }
 
@@ -63,7 +39,46 @@
     }
     
     class Member extends DB_con{
-        
+        public function insertUser($NationalID, $Title_name, $Fname, $Lname, $Sex, $Tel, $email, $Pic, $Username, $Password){
+        }
+
+        public function getUserInfo($NationalID){
+            $result = mysqli_query($this->dbcon, "SELECT * FROM member WHERE NationalID = '$NationalID'");
+            return $result;
+        }
+    }
+
+    class Leader extends Member{
+        public function insertLeader(){
+
+        }
+
+        public function getLeaderInfo($NationalID){
+            $result = mysqli_query($this->dbcon, "SELECT * FROM leader WHERE L_NationalID = '$NationalID'");
+            return $result;
+        }
+    }
+
+    class Leader_location extends Leader{
+        public function insertLeaderLocation(){
+
+        }
+
+        public function getLocation($postNo){
+            $result = mysqli_query($this->dbcon, "SELECT * FROM leader_location WHERE PostNo = '$postNo'");
+            return $result;
+        }
+    }
+
+    class Bank extends Leader{
+        public function insertBank(){
+
+        }
+
+        public function getBank($BankID){
+            $result = mysqli_query($this->dbcon, "SELECT * FROM bank WHERE BankID = '$BankID'");
+            return $result;
+        }
     }
 
 ?>

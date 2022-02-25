@@ -2,13 +2,21 @@
 
     include_once('functions.php');
     $fetchdata = new DB_con();
-    $sql = $fetchdata->fetchonerecord(1112223334455);
+    $user = new Member();
+    $leader = new Leader();
+    $location = new Leader_location();
+    $bank = new Bank();
+    $sql = $user->getUserInfo(1112223334455);
+    // $sql = $fetchdata->fetchonerecord(1112223334455);
     while($row = mysqli_fetch_array($sql)) {
-        $sql1 = $fetchdata->selectLeader($row['NationalID']);
+        $sql1 = $leader->getLeaderInfo($row['NationalID']);
+        // $sql1 = $fetchdata->selectLeader($row['NationalID']);
         while($row1 = mysqli_fetch_array($sql1)){
-            $sql2 = $fetchdata->selectLocation($row1['PostNo']);
+            $sql2 = $location->getLocation($row1['PostNo']);
+            // $sql2 = $fetchdata->selectLocation($row1['PostNo']);
             while($row2 = mysqli_fetch_array($sql2)){
-                $sql3 = $fetchdata->selectBank($row1['BankID']);
+                $sql3 = $bank->getBank($row1['BankID']);
+                // $sql3 = $fetchdata->selectBank($row1['BankID']);
                 while($row3 = mysqli_fetch_array($sql3)){
 
 ?>
@@ -58,7 +66,7 @@
                                         } 
                                     ?>
                                 </p>
-                                <p class="mb-0"><strong class="pr-1">ชื่อ-นามสกุล: </strong><?php echo 'นาย', $row['Fname'], ' ', $row['Lname'] ;?></p>
+                                <p class="mb-0"><strong class="pr-1">ชื่อ-นามสกุล: </strong><?php echo $row['Title_name'], $row['Fname'], ' ', $row['Lname'] ;?></p>
                                 <p class="mb-0"><strong class="pr-1">วันเดือนปีเกิด:</strong><?php echo $row1['Bdate'];?></p>
                                 <p class="mb-0"><strong class="pr-1">เพศ:</strong><?php echo $row['Sex'];?></p>
                                 <p class="mb-0"><strong class="pr-1">ศิลปินที่ดูแล:</strong><?php echo $row1['Artist'];?></p>
@@ -68,7 +76,7 @@
                     <div class="col-lg-8">
                         <div class="card shadow-sm">
                             <div class="card-header bg-transparent border-0">
-                                <h3 class="mb-0"><i class="far fa-clone pr-1"></i>ข้อมูลที่อยู่</h3>
+                                <h3 class="mb-0"><i class="far fa-clone pr-1"></i>ข้อมูลติดต่อ</h3>
                             </div>
                         <div class="card-body pt-0">
                             <table class="table table-bordered">
@@ -102,11 +110,21 @@
                                 <td width="2%">:</td>
                                 <td><?php echo $row1['Country']; ?></td>
                             </tr>
+                            <tr>
+                                <th width="30%">E-mail</th>
+                                <td width="2%">:</td>
+                                <td><?php echo $row['email']; ?></td>
+                            </tr>
+                            <tr>
+                                <th width="30%">เบอร์โทรศัพท์</th>
+                                <td width="2%">:</td>
+                                <td><?php echo $row['Tel']; ?></td>
+                            </tr>
                             </table>
                         </div>
-                        </div>
-                        <div style="height: 26px"></div>
-                        <div class="card shadow-sm">
+                    </div>
+                    <div style="height: 26px"></div>
+                    <div class="card shadow-sm">
                         <div class="card-header bg-transparent border-0">
                             <h3 class="mb-0"><i class="far fa-clone pr-1"></i>ข้อมูลธนาคาร</h3>
                         </div>
@@ -131,9 +149,10 @@
                         </div>
                         </div>
                     </div>
+                    
                     </div>
                 </div>
-                </div>
+            </div>
         </section>
     </body>
     <?php

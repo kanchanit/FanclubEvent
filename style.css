@@ -131,7 +131,7 @@ form .forgot-pass {
   margin-top: -8px;
 }
 form .forgot-pass a {
-  color: #3498db;
+  color: rgba(109, 18, 157, 0.72);
   text-decoration: none;
 }
 form .forgot-pass a:hover {

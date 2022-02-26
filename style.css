@@ -126,14 +126,14 @@ form .data input {
   border: 1px solid silver;
 }
 form .data input:focus {
-  border-color: rgba(109, 18, 157, 0.72);
+  border-color: rgba(255, 151, 135, 0.83);
   border-bottom-width: 2px;
 }
 form .forgot-pass {
   margin-top: -8px;
 }
 form .forgot-pass a {
-  color: rgba(109, 18, 157, 0.72);
+  color: rgba(255, 151, 135, 0.83);
   text-decoration: none;
 }
 form .forgot-pass a:hover {
@@ -181,7 +181,7 @@ form .signup-link {
   text-align: center;
 }
 form .signup-link a {
-  color: #3498db;
+  color: rgba(255, 151, 135, 0.83);
   text-decoration: none;
 }
 form .signup-link a:hover {

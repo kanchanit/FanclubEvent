@@ -68,6 +68,7 @@ header .logo {
   color: #e45;
   cursor: pointer;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
 }
 .show-btn,
 .container {
@@ -86,6 +87,7 @@ input[type="checkbox"] {
   width: 410px;
   padding: 30px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
 }
 #show:checked ~ .container {
   display: block;
@@ -98,7 +100,7 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 .container .close-btn:hover {
-  color: #3498db;
+  color: rgba(109, 18, 157, 0.72);
 }
 .container .text {
   font-size: 35px;
@@ -124,7 +126,7 @@ form .data input {
   border: 1px solid silver;
 }
 form .data input:focus {
-  border-color: #3498db;
+  border-color: rgba(109, 18, 157, 0.72);
   border-bottom-width: 2px;
 }
 form .forgot-pass {
@@ -143,6 +145,7 @@ form .btn {
   width: 100%;
   position: relative;
   overflow: hidden;
+  border-radius: 20px;
 }
 form .btn .inner {
   height: 100%;

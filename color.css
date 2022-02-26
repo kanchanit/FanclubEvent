@@ -107,3 +107,41 @@ section img#clouds {
   padding: 5px 10px;
   color: #000;
 }
+
+/* change profile button */
+
+section .box .button {
+  background-color: #fff;
+  border: none;
+  color: #e45;
+  padding: 10px 103px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 12px;
+}
+
+section .box :hover {
+  background-color: rgb(189, 189, 189);
+}
+
+/* popup login*/
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgab(0, 0, 0, 0.8);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}

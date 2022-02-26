@@ -21,16 +21,6 @@
             return $result;
         }
 
-        public function update($firstname, $lastname, $email, $NationalID) {
-            $result = mysqli_query($this->dbcon, "UPDATE member SET 
-                Fname = '$firstname',
-                Lname = '$lastname',
-                email = '$email',
-                WHERE NationalID = '$NationalID'
-            ");
-            return $result;
-        }
-
         public function delete($NationalID) {
             $deleterecord = mysqli_query($this->dbcon, "DELETE FROM member WHERE NationalID = '$NationalID'");
             return $deleterecord;
@@ -44,6 +34,11 @@
 
         public function getUserInfo($NationalID){
             $result = mysqli_query($this->dbcon, "SELECT * FROM member WHERE NationalID = '$NationalID'");
+            return $result;
+        }
+
+        public function signin($Username, $Password){
+            $result = mysqli_query($this->dbcon, "SELECT NationalID, Username FROM member WHERE Username = '$Username' AND Password = '$Password'");
             return $result;
         }
     }
